@@ -30,8 +30,11 @@ $(document).on("keypress", "#input", function (e) {
 
                 $("#input").val("");
                 $("#title").text(data["Title"] + " (" + data["Year"] + ")");
+                $("#plot").text(data["Plot"]);
 
                 ratings = data["Ratings"];
+
+
                 for (var i = 0; i < ratings.length; i++) {
                     if (ratings[i]["Source"] == "Internet Movie Database") {
                         $("#imdb").text(ratings[i]["Value"]);
@@ -43,7 +46,8 @@ $(document).on("keypress", "#input", function (e) {
                 }
             } else {
 
-                $("#title").text("No such movie found");
+                $("#title").text("No such title found");
+                $("#plot").text("The title does not exist within the online movie database.");
                 $("#imdb").text("N/A");
                 $("#rt").text("N/A");
                 $("#metacritic").text("N/A");
