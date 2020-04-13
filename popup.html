@@ -26,7 +26,7 @@
         margin: 0;
         min-height: 180px;
         padding: 0;
-        width: 384px;
+        width: 420px;
         background-color: #B0BEC5;
       }
 
@@ -42,7 +42,6 @@
       a:visited {
         color: #000000;
         outline: 0;
-        text-decoration: none;
       }
 
       img {
@@ -106,33 +105,27 @@
   <body>
     <div class="modal-header">
       <h1 class="logo" id="greeting">
-        <img class="logo-icon" src="icon128.png" />
-        What's the Rating?
+        <img class="logo-icon" src="icon128.png"/>
+           What's the Rating?
       </h1>
     </div>
     <div class="modal-content" id="message">
-      <p>Get instant ratings for movies and TV shows</p>
-        <input type="text" id="input" size="47" placeholder="Enter the title">
+      <p>Get instant ratings for movies and TV shows. <a href="quickstart.html" id="link">Learn More</a></p>
+        <input type="text" id="input" size="60" placeholder="Enter the title">
     </div>
     <div class="modal-icons">
       <h1 class="logo" id="title" style="text-align: center;"></h1>
       <div class="flex-container">
         <div class="flex">
-            <a href="https://www.imdb.com">
-                <img class="logo-icon" style="float:left" src="imdb_icon.png"/>
-                <p id="imdb">N/A</p>
-            </a>
+            <img class="logo-icon" style="float:left" src="imdb_icon.png"/>
+            <p id="imdb">N/A</p>
         </div>
         <div class="flex">
-            <a href="https://www.rottentomatoes.com">
-                <img class="logo-icon" style="float:left" src="rotten_tomato_icon.png"/>
-            </a>
+            <img class="logo-icon" style="float:left" src="rotten_tomato_icon.png"/>
             <p id="rt">N/A</p>
         </div>
         <div class="flex">
-            <a href="https://www.metacritic.com">
-                <img class="logo-icon" style="float:left" src="metacritic_icon.png"/>
-            </a>
+            <img class="logo-icon" style="float:left" src="metacritic_icon.png"/>
             <p id="metacritic">N/A</p>
         </div>
       </div>

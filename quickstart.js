@@ -4,7 +4,7 @@ $(document).on("click", "#saveKey", function(e) {
             alert("Success! You're all set.");
             close();
         });
-    }).fail( function() { 
+    }).fail( function() {
         $("#key").val("");
         $("#message").text("You have entered an invalid key.");
     })

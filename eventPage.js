@@ -15,7 +15,10 @@ chrome.storage.sync.get("apiKey", function (result) {
 
 chrome.contextMenus.onClicked.addListener(function(info, tab) {
     chrome.tabs.sendMessage(tab.id, "getClickedEl", function(response) {
-        var movieTitle = response.value;
+        var movieTitle = null;
+        if (response) {
+          movieTitle = response.value;
+        }
         $.get("http://www.omdbapi.com/?t=" + movieTitle + "&apikey=" + apiKey, function (data, status) {
 
             notifMessage = "";

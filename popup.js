@@ -1,19 +1,27 @@
 var apiKey = "";
 $(function () {
+    $(".modal-icons").hide();
     chrome.storage.sync.get("apiKey", function (result) {
         $.post("http://www.omdbapi.com/?t=blah&apikey=" + result.apiKey, function (data, status) {
             apiKey = result.apiKey;
         }).fail( function() {
             $("#input").hide();
-            $("#greeting").text("Welcome to What's the Rating?");
-            $("#message").text("To get started, right click on the extension icon and navigate to the options menu");
+            $("#link").text("Get Started");
         })
     });
+});
+
+$(document).ready(function(){
+   $('#message').on('click', 'a', function(){
+     chrome.tabs.create({url: 'quickstart.html'});
+     return false;
+   });
 });
 
 
 $(document).on("keypress", "#input", function (e) {
     if (e.which == 13) {
+        $(".modal-icons").show();
         $("#imdb").text("N/A");
         $("#rt").text("N/A");
         $("#metacritic").text("N/A");
@@ -34,6 +42,7 @@ $(document).on("keypress", "#input", function (e) {
                     }
                 }
             } else {
+
                 $("#title").text("No such movie found");
                 $("#imdb").text("N/A");
                 $("#rt").text("N/A");
